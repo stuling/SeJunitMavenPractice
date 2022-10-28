@@ -15,9 +15,10 @@ public class BasePage {
     }
 
     /**
-     * Iterate through all the links on the page and click.
+     * An interesting option for finding links on the page.
      * Because By.cssSelector sucks sometimes.
      * @param href the target href link
+     * Source: @DevQABlog
      */
     public void clickLinkByHref(String href) {
         List<WebElement> anchors = driver.findElements(By.tagName("a"));

@@ -3,11 +3,16 @@ package heroku.pages.pom.pages;
 import heroku.pages.pom.base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
+
 
 /**
  * The driver in the BasePage is set in
- * the HelloInternetPage. This page only contains
- * a bunch of links
+ * the HelloInternetPage. This page class clicks on
+ * links using (1) By.cssSelector, (2) By.linkTest
+ * and (3) clickLinkByHref() from BasePage
  */
 public class HelloInternetPage  extends BasePage {
 
@@ -15,10 +20,13 @@ public class HelloInternetPage  extends BasePage {
         super(driver);
     }
 
+    public String getTitle(){
+        return driver.getTitle();
+    }
+
     /**
      * Click the 'Checkboxes' link
      * using clickLinkByHref() to prove it can work.
-     * Might change to By.cssSelector later
      */
     public void clickCheckBoxesLink() {
 
@@ -26,15 +34,29 @@ public class HelloInternetPage  extends BasePage {
         clickLinkByHref("/checkboxes");
     }
 
-
     /**
      * Click the 'Dropdown' link
-     * using By.cssSelector for now.
-     * might refactor to clickLinkByHref() later
+     * using By.linkText
      */
     public void clickDropDownLink() {
 
-        driver.findElement(By.cssSelector("#content > ul > li:nth-child(11) > a")).click();
+        driver.findElement(By.linkText("Dropdown")).click();
+        //driver.findElement(By.cssSelector("#content > ul > li:nth-child(11) > a")).click();
         //clickLinkByHref("/dropdown");
     }
+
+    /**
+     * Click the 'Entry Ad' link
+     * using By.cssSelector.
+     * This page will display a modal window
+     */
+    public void clickEntryAdLink() {
+
+        driver.findElement(By.cssSelector("#content > ul > li:nth-child(15) > a")).click();
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("modal")));
+
+    }
+
 }

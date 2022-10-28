@@ -14,9 +14,10 @@ class HelloInternetPageTest extends BaseTest {
     void checkTitleOfPage() {
         //Open the URL
         driver.get("https://the-internet.herokuapp.com/");
+        HelloInternetPage helloInternetPage = new HelloInternetPage(driver);
 
         //Assert that the title of the page = The Internet
-        assertEquals("The Internet", driver.getTitle());
+        assertEquals("The Internet", helloInternetPage.getTitle());
     }
 
     @Test
