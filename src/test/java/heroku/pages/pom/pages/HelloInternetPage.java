@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import java.time.Duration;
+ import java.time.Duration;
 
 
 /**
@@ -54,8 +54,14 @@ public class HelloInternetPage  extends BasePage {
 
         driver.findElement(By.cssSelector("#content > ul > li:nth-child(15) > a")).click();
 
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("modal")));
+        try{
+            Thread.sleep(2000);
+        }
+        catch(InterruptedException ie){
+        }
+
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("modal")));
 
     }
 
