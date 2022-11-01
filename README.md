@@ -1,3 +1,5 @@
+[![Java CI with Maven](https://github.com/stuling/SeJunitMavenPractice/actions/workflows/maven.yml/badge.svg)](https://github.com/stuling/SeJunitMavenPractice/actions/workflows/maven.yml)
+
 ### Description:
 A repo to practice building with Page Object Model and to remember how to find things on a page using Selenium WebDriver.
 
