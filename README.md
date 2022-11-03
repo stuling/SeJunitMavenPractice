@@ -6,7 +6,7 @@ A repo to practice building with Page Object Model and to remember how to find t
 
 ### Practice Websites:
 1. https://the-internet.herokuapp.com/
-2. TBD
+2. https://saucedemo.com/
 
 
 ### Technical Details:
