@@ -27,7 +27,7 @@ public class SwagLoginPageTest extends BaseTest {
      */
     @ParameterizedTest
     @EnumSource(User.class)
-    public void loginTest(User user) {
+    public void loginWithGoodUsers(User user) {
 
         driver.get("https://saucedemo.com/");
         LoginPage swagLoginPage = new LoginPage(driver);
@@ -36,5 +36,19 @@ public class SwagLoginPageTest extends BaseTest {
         swagLoginPage.enterPassword();
         swagLoginPage.clickLoginButton();
         assertEquals(true, driver.findElement(By.className("title")).isDisplayed());
+    }
+
+    @Test
+    public void loginWithBadUser() {
+
+        driver.get("https://saucedemo.com/");
+        LoginPage swagLoginPage = new LoginPage(driver);
+
+        swagLoginPage.enterUserName("locked_out_user");
+        swagLoginPage.enterPassword();
+        swagLoginPage.clickLoginButton();
+
+        Boolean loginErrorMessage = driver.findElement(By.cssSelector("#login_button_container > div > form > div.error-message-container.error > h3")).isDisplayed();
+        assertEquals(true, loginErrorMessage);
     }
 }
