@@ -24,20 +24,20 @@ public class SwagProductsPageTest extends BaseTest {
         assertEquals("Swag Labs", swagProductsPage.getTitle());
     }
 
-    @Test
-    @Disabled
-    public void checkShoppingCartLink() {
-
-        driver.get("https://saucedemo.com/");
-        LoginPage swagLoginPage = new LoginPage(driver);
-        ProductsPage swagProductsPage = new ProductsPage(driver);
-
-        swagLoginPage.enterUserName("standard_user");
-        swagLoginPage.enterPassword();
-        swagLoginPage.clickLoginButton();
-
-        swagProductsPage.clickShoppingCart();
-
-        assertEquals("Swag Labs", swagProductsPage.getTitle());
-    }
+//    @Test
+//    @Disabled
+//    public void checkShoppingCartLink() {
+//
+//        driver.get("https://saucedemo.com/");
+//        LoginPage swagLoginPage = new LoginPage(driver);
+//        ProductsPage swagProductsPage = new ProductsPage(driver);
+//
+//        swagLoginPage.enterUserName("standard_user");
+//        swagLoginPage.enterPassword();
+//        swagLoginPage.clickLoginButton();
+//
+//        swagProductsPage.clickShoppingCart();
+//
+//        assertEquals("Swag Labs", swagProductsPage.getTitle());
+//    }
 }
