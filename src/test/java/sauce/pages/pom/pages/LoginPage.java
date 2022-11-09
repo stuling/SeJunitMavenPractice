@@ -23,11 +23,20 @@ public class LoginPage extends BasePage {
     }
 
     /**
-     * Swaglabs login page has 1 password, secret_sauce
+     * Swaglabs login page has 1 password, secret_sauce (hardcoded here)
      */
     public void enterPassword() {
 
         driver.findElement(By.id("password")).sendKeys("secret_sauce");
+    }
+
+    /**
+     * pass in a specific password to Swaglabs login page
+     * @param password
+     */
+    public void enterPassword(String password) {
+
+        driver.findElement(By.id("password")).sendKeys(password);
     }
 
     public void clickLoginButton() {

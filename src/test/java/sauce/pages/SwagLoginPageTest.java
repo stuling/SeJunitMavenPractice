@@ -51,4 +51,19 @@ public class SwagLoginPageTest extends BaseTest {
         Boolean loginErrorMessage = driver.findElement(By.cssSelector("#login_button_container > div > form > div.error-message-container.error > h3")).isDisplayed();
         assertEquals(true, loginErrorMessage);
     }
+
+    @Test
+    public void failWithBadPassword() {
+
+        driver.get("https://saucedemo.com/");
+        LoginPage swagLoginPage = new LoginPage(driver);
+
+        swagLoginPage.enterUserName("standard_user");
+        swagLoginPage.enterPassword("badpassword");
+        swagLoginPage.clickLoginButton();
+
+        //getPageSource kinda sucks but I'll go with it for now
+        Boolean loginErrorMessage = driver.getPageSource().contains("Epic sadface");
+        assertEquals(true, loginErrorMessage);
+    }
 }
