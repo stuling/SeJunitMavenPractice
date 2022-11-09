@@ -2,7 +2,7 @@
 
 ### Description:
 A repo to practice building out Page Object Models and finding things on a page using Selenium WebDriver.
-WebDriverManager takes care of browser management in tests. Visit [Actions] (https://github.com/stuling/SeJunitMavenPractice/actions)
+WebDriverManager takes care of browser management in tests. Visit [Actions](https://github.com/stuling/SeJunitMavenPractice/actions)
 for unit test results.
 
 
