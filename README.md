@@ -14,7 +14,6 @@ for unit test results.
 ### Technical Details:
 | Tool             | Details                                    |
 |------------------|--------------------------------------------|
-| IDE              | IntelliJ IDEA Community Edition 2022.1     |
 | Language         | Java                                       |
 | JDK              | jdk-11.0.14.101-hotspot                    |
 | Build System     | Maven project                              |
